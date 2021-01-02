@@ -152,25 +152,25 @@ $("#task-form-modal").on("shown.bs.modal", function() {
   $("#modalTaskDescription").trigger("focus");
 });
 
-var getDataAndSave = function() {
-    // get form values
-    var taskText = $("#modalTaskDescription").val();
-    var taskDate = $("#modalDueDate").val();
+var getDataAndSave = function () {
+  // get form values
+  var taskText = $("#modalTaskDescription").val();
+  var taskDate = $("#modalDueDate").val();
 
-    if (taskText && taskDate) {
-      createTask(taskText, taskDate, "toDo");
+  if (taskText && taskDate) {
+    createTask(taskText, taskDate, "toDo");
 
-      // close modal
-      $("#task-form-modal").modal("hide");
+    // close modal
+    $("#task-form-modal").modal("hide");
 
-      // save in tasks array
-      tasks.toDo.push({
-        text: taskText,
-        date: taskDate
-      });
+    // save in tasks array
+    tasks.toDo.push({
+      text: taskText,
+      date: taskDate
+    });
 
-      saveTasks();
-    }
+    saveTasks();
+  }
 }
 
 // enter pressed in form modal
@@ -181,7 +181,7 @@ $("#task-form-modal").keypress(function (e) {
 });
 
 // save button in modal was clicked
-$("#task-form-modal .btn-primary").click(function() {
+$("#task-form-modal .btn-primary").click(function () {
   getDataAndSave();
 });
 
@@ -253,4 +253,20 @@ $(".card .list-group").sortable({
   }
 });
 
+// trash drop zone
+$("#trash").droppable({
+  accept: ".card .list-group-item",
+  tolerance: "touch",
+  drop: function (event, ui) {
+    ui.draggable.remove();
+  },
+  /*
+  over: function (event, ui) {
+    console.log("over");
+  },
+  out: function (event, ui) {
+    console.log("out");
+  }
+  */
+});
 
