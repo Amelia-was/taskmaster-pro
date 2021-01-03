@@ -5,7 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500&family=Open+Sans&family=Poiret+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+    integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Taskmaster Pro</title>
@@ -15,13 +23,19 @@
 
   <div class="row min-vh-100 no-gutters">
     <header class="col-12 col-lg-3 bg-dark text-light d-flex flex-column p-4 p-lg-3 sticky-top">
-      <h1 class="text-center">Taskmaster Pro Edition</h1>
-      <button id="create-task" class="btn btn-block btn-success" data-toggle="modal" data-target="#task-form-modal">Add
-        Task</button>
-      <button id="remove-tasks" class="btn btn-block btn-danger">Delete All Tasks</button>
-      <p class="mt-auto d-none d-lg-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptas architecto ipsa
-        excepturi aut non
-        laudantium sequi fugit officiis optio deleniti asperiores rem eius laborum maxime blanditiis culpa, quis iste?
+      <div class="row">
+      <span class="oi oi-task display-2 mb-2 d-inline col-3"></span>
+      <h1 class="text-left col-9">Taskmaster Pro Edition</h1>
+      </div>
+      <button id="create-task" class="btn btn-block btn-success" data-toggle="modal" data-target="#task-form-modal">
+        <span class="oi oi-plus mr-2"></span>Add Task</button>
+      <button id="remove-tasks" class="btn btn-block btn-danger">
+        <span class="oi oi-trash mr-2"></span>
+        Delete All Tasks</button>
+      <p class="mt-auto d-none d-lg-block">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptas architecto ipsa
+        excepturi aut non laudantium sequi fugit officiis optio deleniti asperiores rem eius
+        laborum maxime blanditiis culpa, quis iste?
       </p>
     </header>
 
@@ -37,7 +51,7 @@
           </div>
         </div>
         <!-- to do end-->
-      
+
         <!-- in progress start -->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
@@ -47,7 +61,7 @@
           </div>
         </div>
         <!-- in progress end -->
-      
+
         <!-- in review start -->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
@@ -57,7 +71,7 @@
           </div>
         </div>
         <!-- in review end -->
-      
+
         <!-- done start -->
         <div class="col-12 col-md-6 col-xl-3 mb-3">
           <div class="card">
@@ -70,14 +84,15 @@
       </div>
 
       <!-- trash -->
-      <div id="trash" class="mt-auto">
-        <div class="w-100 bg-danger p-3 text-center text-light display-4">
+      <div id="trash" class="mt-auto overflow-hidden">
+        <div class="w-100 p-3 text-center bottom-trash">
+          <span class="oi oi-trash mx-auto mb-4"></span>
           Drop Here to Remove.
         </div>
       </div>
 
     </main>
-    </div>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="task-form-modal" tabindex="-1" role="dialog" aria-labelledby="task-form-modal"
@@ -98,7 +113,7 @@
             </div>
             <div class="form-group">
               <label for="modalDueDate">Due date</label>
-              <input type="text" id="modalDueDate" placeholder="mm/dd/yyyy" autocomplete="off" class="form-control"/>
+              <input type="text" id="modalDueDate" placeholder="mm/dd/yyyy" autocomplete="off" class="form-control" />
             </div>
           </form>
         </div>
